@@ -249,7 +249,19 @@
         }
 
         if(platform.os.family === 'iOS'){
-            window.open("https://apps.apple.com/app/sasthya-seba/id6447047717", '_system', 'location=yes');
+            function openIos(url) {
+                // Create link in memory
+                var a = window.document.createElement("a");
+                a.target = '_system'
+                a.href = url;
+
+                // Dispatch fake click
+                var e = window.document.createEvent("MouseEvents");
+                e.initMouseEvent("click", true, true, window, 0, 0, 0, 0, 0, false, false, false, false, 0, null);
+                a.dispatchEvent(e);
+            }
+
+            openIos('https://apps.apple.com/app/sasthya-seba/id6447047717');
         }
     </script>
 
