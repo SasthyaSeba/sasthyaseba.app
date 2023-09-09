@@ -95,7 +95,7 @@
                             Online Doctor Appointment, Ambulance Service, Medicine Home Delivery, Hospital Information, Physiotherapist Service, Nurse Service, Patient Care, Online Pharmacy, Video Consultancy with Doctor, Foreign Doctor Appointment.
                         </p>
                         <ul>
-                            <li><a class="app-store" href="https://apps.apple.com/app/sasthya-seba/id6447047717"><img src="assets/images/app-store.png" alt="Sasthya Seba iOS App"></a></li>
+                            <li><a class="app-store" id="appStoreDownloadLink" href="https://apps.apple.com/app/sasthya-seba/id6447047717"><img src="assets/images/app-store.png" alt="Sasthya Seba iOS App"></a></li>
                             <li><a class="play-store" href="https://play.google.com/store/apps/details?id=com.sasthyaseba.patient"><img src="assets/images/play-store.png" alt="Sasthya Seba Android App"></a></li>
                         </ul>
                     </div>
@@ -249,19 +249,7 @@
         }
 
         if(platform.os.family === 'iOS'){
-            function openIos(url) {
-                // Create link in memory
-                var a = window.document.createElement("a");
-                a.target = '_system'
-                a.href = url;
-
-                // Dispatch fake click
-                var e = window.document.createEvent("MouseEvents");
-                e.initMouseEvent("click", true, true, window, 0, 0, 0, 0, 0, false, false, false, false, 0, null);
-                a.dispatchEvent(e);
-            }
-
-            openIos('https://apps.apple.com/app/sasthya-seba/id6447047717');
+            document.getElementById('appStoreDownloadLink').click();
         }
     </script>
 
